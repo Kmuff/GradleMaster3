@@ -1,24 +1,23 @@
 package ru.netology;
 
-import static org.testng.Assert.*;
+import junit.framework.TestCase;
 
-public class CashbackHackServiceTest {
-    @org.testng.annotations.Test
+public class CashbackHackServiceTest extends TestCase {
+    @org.junit.Test
     public void testRemain() {
         CashbackHackService service = new CashbackHackService();
         int amount = 1000;
         int actual = service.remain(amount);
         int expected = 0;
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void testRemainWiWithCashback() {
         CashbackHackService service = new CashbackHackService();
         int amount = 900;
         int actual = service.remain(amount);
-        int expected = 110;
-        assertEquals(actual, expected);
+        int expected = 100;
+        assertEquals(expected, actual);
     }
-
 }
